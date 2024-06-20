@@ -1,40 +1,42 @@
 package hellojpa;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity // 필수
 //@Table(name = "USER") // 테이블 이름 지정
 public class Member {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	// JPA는 기본생성자가 필요함 -> 동적으로 객체를 생성해야되기 때문(리플렉션)
+	@Column(name = "name", nullable = false, length = 10)
+	private String username;
+
+	private Integer age11;
+
+	@Enumerated(EnumType.STRING) // db에는 enum 타입이 없음 이 때, @Enumerated 애노테이션 사용
+	private RoleType roleType;
+
+	@Temporal(TemporalType.TIMESTAMP) // DATE-날짜, TIME-시간, TIMESTAMP-날짜&시간
+	private Date createdDate;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date lastModifiedDate;
+
+	// java8 부터 LocalDate, LocalDateTime 사용 시 @Temporal 생략가능
+	private LocalDate testLocalDate;
+	private LocalDateTime testLocalDateTime;
+
+	@Lob // 큰 데이터를 사용할 때
+	private String description;
+
+	@Transient // DB에서 사용안하고 싶을 경우
+	private int temp; 
+	
 	public Member() {
-	}
-
-	public Member(Long id, String name) {
-		this.id = id;
-		this.name = name;
-	}
-
-	//	@Column(name = "username") // DB 컬럼 네임 지정
-	private String name;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 }

@@ -48,10 +48,12 @@ public class JpaMain {
             // 쿼리
             */
 
+            /*
             // 엔티티 수정
             Member member = em.find(Member.class, 150L);
             member.setName("수정수정");
             System.out.println("=== 엔티티 수정");
+            */
 
             tx.commit();
         } catch (Exception e) {
