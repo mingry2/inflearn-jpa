@@ -19,4 +19,5 @@
 ### [섹션2 - JPA 시작하기](https://www.notion.so/2-JPA-2b1ef47d5e27485eb22ec435f03784fb?pvs=4)
 ### [섹션3 - 영속성 컨텍스트](https://www.notion.so/3-67ff40ce01a54b67b8a8afb84f074f8e?pvs=4)
 ### [섹션4 - 엔티티 매핑](https://www.notion.so/4-5704cb5c52f64b15b122720188d361c9?pvs=4)
+### [섹션5 - 연관관계 매핑 기초](https://www.notion.so/5-7a755852f2c645e887e1fe0ea9ddffbd?pvs=4)
 📢 이후 섹션은 새로운 Repository 에서...
